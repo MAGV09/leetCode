@@ -1,1 +1,1 @@
-# leetCode
+This repo is for problem solving.
