@@ -9,15 +9,34 @@ s = "racecar", t = "carrace"
 */
 let s = 'jar';
 let t = 'jam';
-function isAnagram(s, t) {
-  let s1 = s.split('').sort();
-  let t1 = t.split('').sort();
+// function isAnagram(s, t) {
+//   let s1 = s.split('').sort();
+//   let t1 = t.split('').sort();
 
-  for (let i = 0; i <= s1.length - 1; i++) {
-    if (s1[i] != t1[i]) {
-        console.log(s1[i],t1[i]);
-      return false;
+//   for (let i = 0; i <= s1.length - 1; i++) {
+//     if (s1[i] != t1[i]) {
+//         console.log(s1[i],t1[i]);
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+// console.log(isAnagram(s, t));
+
+function isAnagram(s, t) {
+  if (s.length !== t.length) return false;
+  const map = new Map();
+  for (const char of s) {
+    if (map.has(char)) {
+      map.set(char, map.get(char) + 1);
+    } else {
+      map.set(char, 1);
     }
+  }
+  for (const char of t) {
+    if (!map.has(char)) return false;
+    map.set(char, map.get(char) - 1);
+    if (map.get(char) < 0) return false;
   }
   return true;
 }
