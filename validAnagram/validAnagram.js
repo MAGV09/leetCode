@@ -7,13 +7,8 @@ If the letters match each other return true
 Otherwise return false
 s = "racecar", t = "carrace"
 */
-<<<<<<< HEAD
-// let s = 'jar';
-// let t = 'jam';
-=======
 let s = 'jar';
 let t = 'jam';
->>>>>>> d200b1601421fd80a5b5eaa82829b2a19e7fa0f0
 // function isAnagram(s, t) {
 //   let s1 = s.split('').sort();
 //   let t1 = t.split('').sort();
